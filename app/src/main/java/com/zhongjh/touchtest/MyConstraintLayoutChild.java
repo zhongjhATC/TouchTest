@@ -9,19 +9,19 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
-public class MyConstraintLayout extends ConstraintLayout {
+public class MyConstraintLayoutChild extends ConstraintLayout {
 
-    private final static String TAG = "OnTouch MyConstraintLayout";
+    private final static String TAG = "OnTouch MyConstraintLayoutChild";
 
-    public MyConstraintLayout(@NonNull Context context) {
+    public MyConstraintLayoutChild(@NonNull Context context) {
         super(context);
     }
 
-    public MyConstraintLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public MyConstraintLayoutChild(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MyConstraintLayout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public MyConstraintLayoutChild(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 

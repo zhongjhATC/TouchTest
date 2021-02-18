@@ -4,24 +4,24 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
+import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.constraintlayout.widget.ConstraintLayout;
 
-public class MyConstraintLayout extends ConstraintLayout {
+public class MyButton extends androidx.appcompat.widget.AppCompatButton {
 
-    private final static String TAG = "OnTouch MyConstraintLayout";
+    private final static String TAG = "OnTouch MyButton";
 
-    public MyConstraintLayout(@NonNull Context context) {
+    public MyButton(@NonNull Context context) {
         super(context);
     }
 
-    public MyConstraintLayout(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public MyButton(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MyConstraintLayout(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public MyButton(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -59,12 +59,5 @@ public class MyConstraintLayout extends ConstraintLayout {
         }
         return super.onTouchEvent(event);
     }
-
-    @Override
-    public boolean onInterceptTouchEvent(MotionEvent ev) {
-        return super.onInterceptTouchEvent(ev);
-    }
-
-
 
 }

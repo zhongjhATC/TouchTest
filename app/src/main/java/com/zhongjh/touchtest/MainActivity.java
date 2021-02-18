@@ -19,26 +19,33 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.d(TAG,"dispatchTouchEvent" + ev.getAction());
-        return super.dispatchTouchEvent(ev);
+        Log.d(TAG,"dispatchTouchEvent" + ev.getAction() );
+        boolean isDispatch = super.dispatchTouchEvent(ev);
+//        Log.d(TAG," super.dispatchTouchEvent(ev):" + isDispatch);
+        return isDispatch;
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
+                Log.d(TAG,"onTouchEvent ACTION_DOWN");
                 // 手指按下（所有事件的开始） 0
                 break;
             case MotionEvent.ACTION_MOVE:
+                Log.d(TAG,"onTouchEvent ACTION_MOVE");
                 // 手指移动（会多次触发） 2
                 break;
             case MotionEvent.ACTION_UP:
+                Log.d(TAG,"onTouchEvent ACTION_UP");
                 // 手指抬起（与DOWN对应的结束） 1
                 break;
             case MotionEvent.ACTION_CANCEL:
+                Log.d(TAG,"onTouchEvent ACTION_CANCEL");
                 // 事件被拦截 （非人为原因） 3
                 break;
             case MotionEvent.ACTION_OUTSIDE:
+                Log.d(TAG,"onTouchEvent ACTION_OUTSIDE");
                 // 超出区域 4
                 break;
         }
