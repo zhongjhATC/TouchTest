@@ -4,24 +4,24 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.MotionEvent;
-import android.widget.Button;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-public class MyButton extends androidx.appcompat.widget.AppCompatButton {
+public class MyText extends androidx.appcompat.widget.AppCompatTextView {
 
-    private final static String TAG = "OnTouch MyButton";
+    private final static String TAG = "OnTouch MyText";
 
-    public MyButton(@NonNull Context context) {
+    public MyText(@NonNull Context context) {
         super(context);
     }
 
-    public MyButton(@NonNull Context context, @Nullable AttributeSet attrs) {
+    public MyText(@NonNull Context context, @Nullable AttributeSet attrs) {
         super(context, attrs);
     }
 
-    public MyButton(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
+    public MyText(@NonNull Context context, @Nullable AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
     }
 
@@ -29,7 +29,7 @@ public class MyButton extends androidx.appcompat.widget.AppCompatButton {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         Log.d(TAG,"dispatchTouchEvent" + ev.getAction());
         boolean isDispatch = super.dispatchTouchEvent(ev);
-        Log.d(TAG," super.dispatchTouchEvent(ev):" + isDispatch);
+//        Log.d(TAG," super.dispatchTouchEvent(ev):" + isDispatch);
         return isDispatch;
     }
 
@@ -65,5 +65,6 @@ public class MyButton extends androidx.appcompat.widget.AppCompatButton {
         Log.d(TAG,"performClick");
         return super.performClick();
     }
+
 
 }

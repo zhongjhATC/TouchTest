@@ -2,26 +2,31 @@ package com.zhongjh.touchtest;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.MotionEvent;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
     private final static String TAG = "OnTouch MainActivity";
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        findViewById(R.id.myButton).setOnTouchListener((v, event) -> false);
     }
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
         Log.d(TAG,"dispatchTouchEvent" + ev.getAction() );
         boolean isDispatch = super.dispatchTouchEvent(ev);
-//        Log.d(TAG," super.dispatchTouchEvent(ev):" + isDispatch);
+        Log.d(TAG," super.dispatchTouchEvent(ev):" + isDispatch);
         return isDispatch;
     }
 
@@ -51,5 +56,7 @@ public class MainActivity extends AppCompatActivity {
         }
         return super.onTouchEvent(event);
     }
+
+
 
 }

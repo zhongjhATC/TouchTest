@@ -29,7 +29,7 @@ public class MyConstraintLayout extends ConstraintLayout {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         Log.d(TAG,"dispatchTouchEvent" + ev.getAction());
         boolean isDispatch = super.dispatchTouchEvent(ev);
-//        Log.d(TAG," super.dispatchTouchEvent(ev):" + isDispatch);
+        Log.d(TAG," super.dispatchTouchEvent(ev):" + isDispatch);
         return isDispatch;
     }
 
@@ -62,9 +62,13 @@ public class MyConstraintLayout extends ConstraintLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
+        Log.d(TAG,"onInterceptTouchEvent" + ev.getAction());
         return super.onInterceptTouchEvent(ev);
     }
 
-
-
+    @Override
+    public boolean performClick() {
+        Log.d(TAG,"performClick");
+        return super.performClick();
+    }
 }
