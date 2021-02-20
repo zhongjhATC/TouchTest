@@ -27,9 +27,9 @@ public class MyButton extends androidx.appcompat.widget.AppCompatButton {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.d(TAG,"dispatchTouchEvent" + ev.getAction());
+        Log.d(TAG,"dispatchTouchEvent " + Utils.getAction(ev.getAction()) );
         boolean isDispatch = super.dispatchTouchEvent(ev);
-        Log.d(TAG," super.dispatchTouchEvent(ev):" + isDispatch);
+//        Log.d(TAG," super.dispatchTouchEvent(ev):" + isDispatch);
         return isDispatch;
     }
 

@@ -1,5 +1,6 @@
 package com.zhongjh.touchtest;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
@@ -9,6 +10,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.constraintlayout.widget.ConstraintLayout;
 
+@SuppressLint("LongLogTag")
 public class MyConstraintLayoutChild extends ConstraintLayout {
 
     private final static String TAG = "OnTouch MyConstraintLayoutChild";
@@ -27,9 +29,9 @@ public class MyConstraintLayoutChild extends ConstraintLayout {
 
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
-        Log.d(TAG,"dispatchTouchEvent" + ev.getAction());
+        Log.d(TAG,"dispatchTouchEvent " + Utils.getAction(ev.getAction()) );
         boolean isDispatch = super.dispatchTouchEvent(ev);
-        Log.d(TAG," super.dispatchTouchEvent(ev):" + isDispatch);
+//        Log.d(TAG," super.dispatchTouchEvent(ev):" + isDispatch);
         return isDispatch;
     }
 
@@ -62,7 +64,7 @@ public class MyConstraintLayoutChild extends ConstraintLayout {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
-        Log.d(TAG,"onInterceptTouchEvent" + ev.getAction());
+        Log.d(TAG,"onInterceptTouchEvent " + Utils.getAction(ev.getAction()) );
         return super.onInterceptTouchEvent(ev);
     }
 
